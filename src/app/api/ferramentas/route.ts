@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Ferramenta } from "@/classes/Ferramenta";
 import { cadastrarFerramenta, listarFerramentas } from "@/data/ferramentaData";
-import next from "next";
+
 
 export async function GET () {
     const ferramentas = await listarFerramentas();
@@ -9,7 +9,7 @@ export async function GET () {
     
 }
 
-export async function POST (request : NextResponse) {
+export async function POST (request : NextRequest) {
     const body = await request.json();
 
     const ferramenta = new Ferramenta (
