@@ -18,6 +18,7 @@ export async function GET (request :Request, {params} : Params) {
             {status: 400}
         );
     };
+
     const estoque = await buscarEstoquePorid(idEstoque);
     if(!estoque) {
       return NextResponse.json(
